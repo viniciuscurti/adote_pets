@@ -1,0 +1,32 @@
+  
+<div class="container mt-4">
+  <div class="container pt-5">
+    <div class="d-flex justify-content-center">
+      <h2 class="mt-5">Animais Disponíveis</h2>
+    </div>
+  </div>
+  <br>
+  <div>
+    <%= link_to "Novo pet?", new_pet_path, class: "btn btn-secondary" %>
+  </div>
+  <br>
+  <div class="row">
+    <% if @pets.present? %>
+      <% @pets.each do |pet| %>
+        <% unless pet.adoption.present? %>
+          <div class="col-6 mb-3">
+            <div class="card-product">
+              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
+              <div class="card-product-infos">
+                <h2><%= pet.name %></h2>
+                <p><strong>Categoria:</strong> <%= pet.category %></p>
+                <p><strong>Professor:</strong> <%= pet.birth_date %></p>
+                <p><%= link_to "Details", pet_path(pet), class: "btn btn-primary" %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
