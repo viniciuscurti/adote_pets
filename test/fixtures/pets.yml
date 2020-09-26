@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birth: 2020-09-25
+  avaiable: false
+  type: 
+
+two:
+  name: MyString
+  birth: 2020-09-25
+  avaiable: false
+  type: 
