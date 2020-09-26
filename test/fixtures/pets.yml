@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  birth: 2020-09-25
-  avaiable: false
-  type: 
+  category: MyString
+  birth: 2020-09-26
+  adopted: false
 
 two:
   name: MyString
-  birth: 2020-09-25
-  avaiable: false
-  type: 
+  category: MyString
+  birth: 2020-09-26
+  adopted: false
