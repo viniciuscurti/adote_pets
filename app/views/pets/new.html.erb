@@ -5,8 +5,9 @@
   <div>
     <%= simple_form_for(@pet) do |f| %>
       <%= f.input :name, label: 'Nome', class:"mt-2" %>
-      <%= f.input :category, label: 'Categoria', collection: ['Cachorro', 'Gato', 'Outro'],class:"mt-2"  %>
+      <%= f.input :category, label: 'Categoria', collection: ['Cachorro', 'Gato', 'Outro'], class:"mt-2"  %>
       <%= f.input :birth, label: 'Aniversário', class:"mt-2"   %>
+      <%= f.input :photo, as: :file, class:"mt-1" %>
       <div class="mb-3">
         <%= f.submit 'Add', class: 'btn btn-primary' %>
         <%= link_to "Back to pets list", pets_path, class: "btn btn-secondary" %>

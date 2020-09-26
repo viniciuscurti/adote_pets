@@ -14,6 +14,6 @@ class AdoptionsController < ApplicationController
   private
 
   def adoption_params
-    params.require(:adoption).permit(:owner_name, :pet_id)
+    params.require(:adoption).permit(:adopter, :pet_id)
   end
 end
