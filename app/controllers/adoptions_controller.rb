@@ -5,7 +5,7 @@ class AdoptionsController < ApplicationController
     @adoption.pet = @pet
 
     if @adoption.save
-      redirect_to animal_path(@pet)
+      redirect_to pet_path(@pet)
     else
       render 'pets/show'
     end

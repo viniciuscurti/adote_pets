@@ -40,7 +40,7 @@ class PetsController < ApplicationController
   private
 
   def set_pet
-    @pet = Pet.find(params[:id])
+    @pet = Pet.friendly.find(params[:id])
   end
 
   def pet_params
