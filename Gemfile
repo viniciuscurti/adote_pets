@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 gem 'cloudinary'
 gem 'friendly_id', '~> 5.4.0'
 # Reduces boot times through caching; required in config/boot.rb
