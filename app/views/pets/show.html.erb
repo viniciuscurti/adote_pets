@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="container pt-5">
+    <div class="d-flex justify-content-center mt-2">
+      <h1 class="mt-5 border-bottom">Detalhes do Pet</h1>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-5">
+    <div>
+      <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class ="d-flex justify-content-between flex-column pb-3">
+      <h2 class="border-bottom"><%= @pet.name %></h2>
+      <ul>
+        <li>Categoria: <%= @pet.category %></li>
+        <li>Aniversário: <%= @pet.birth %></li>
+      </ul>
+      <div>
+        <%= link_to "Edite pet", edit_pet_path, class: "btn btn-primary mr-1" %>
+        <%= link_to "Volte para todos pets", pets_path, class: "btn btn-primary mr-1" %>
+        <%= link_to "Delete pet", pet_path(@pet), method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger mr-1" %>
+      </div>
+      <% if @pet.adoption.present? %>
+        <div class="mt-5">
+          <h2 class="border-bottom"> Adotante: <%= @pet.adoption.adopter %></h2>
+          <ul>
+            <li> <strong>Data da adoção:</strong> <%= @pet.adoption.created_at.strftime("%Y-%m-%d") %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="mt-5">
+          <%= render 'adoptions/new', pet: @pet, adoption: @adoption %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
